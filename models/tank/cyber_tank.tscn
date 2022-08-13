@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d04yyfo8uc5h"]
+
+[ext_resource type="PackedScene" uid="uid://d5yhdrl3nvv6" path="res://models/tank/tank.glb" id="1_ltiv2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2na4"]
+size = Vector3(3.78673, 2.55443, 6.5879)
+
+[node name="CyberTank" type="VehicleBody3D"]
+
+[node name="TankModel" parent="." instance=ExtResource("1_ltiv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.413393, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2863, -0.388681)
+shape = SubResource("BoxShape3D_l2na4")
