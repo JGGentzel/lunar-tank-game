@@ -1,4 +1,10 @@
-CollisionShape3D
-Camera3D
 MeshInstance3D
+DirectionalLight3D
+WorldEnvironment
+Node3D
+SpringArm3D
+RigidDynamicBody3D
+CollisionShape3D
+VehicleWheel3D
+Camera3D
 VehicleBody3D

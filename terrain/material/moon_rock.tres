@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://1j53jary6n1x"]
+
+[ext_resource type="Texture2D" uid="uid://dngw4vnnaywo6" path="res://terrain/material/TexturesCom_Rock_Asteroid_512_albedo.jpg" id="1_3pe6g"]
+[ext_resource type="Texture2D" uid="uid://bs4xvdblpmuy6" path="res://terrain/material/TexturesCom_Rock_Asteroid_512_height.jpg" id="2_slk87"]
+[ext_resource type="Texture2D" uid="uid://chbxe7f7v6fp2" path="res://terrain/material/TexturesCom_Rock_Asteroid_512_normal.jpg" id="3_jl0m2"]
+[ext_resource type="Texture2D" uid="uid://bye08q7fftuo5" path="res://terrain/material/TexturesCom_Rock_Asteroid_512_roughness.jpg" id="4_6pe82"]
+
+[resource]
+albedo_texture = ExtResource("1_3pe6g")
+roughness_texture = ExtResource("4_6pe82")
+normal_enabled = true
+normal_texture = ExtResource("3_jl0m2")
+heightmap_scale = 0.1
+heightmap_texture = ExtResource("2_slk87")

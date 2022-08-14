@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ga58anagkeq"]
+
+[ext_resource type="Script" path="res://terrain/world.gd" id="1_k1boe"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_k1boe")
+frequency = 10.0

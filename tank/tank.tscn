@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://d04yyfo8uc5h"]
+
+[ext_resource type="Script" path="res://tank/tank.gd" id="1_0obgn"]
+[ext_resource type="PackedScene" uid="uid://d5yhdrl3nvv6" path="res://models/tank/tank.glb" id="1_ltiv2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h8q3i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2na4"]
+size = Vector3(3.78673, 2.55443, 6.5879)
+
+[node name="CyberTank" type="VehicleBody3D"]
+mass = 90718.4
+physics_material_override = SubResource("PhysicsMaterial_h8q3i")
+steering = 3.14159
+script = ExtResource("1_0obgn")
+
+[node name="TankModel" parent="." instance=ExtResource("1_ltiv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.413393, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2863, -0.388681)
+shape = SubResource("BoxShape3D_l2na4")
+
+[node name="RearRightWheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0.234109, 1.8928)
+use_as_traction = true
+wheel_radius = 0.75
+
+[node name="RearLeftWheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0.234109, 1.8928)
+use_as_traction = true
+wheel_radius = 0.75
+
+[node name="MiddleRightWheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, -0.0149431, -0.107201)
+use_as_traction = true
+wheel_friction_slip = 0.0
+
+[node name="MiddleLeftWheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -0.0149431, -0.107201)
+use_as_traction = true
+wheel_friction_slip = 0.0
+
+[node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, -0.0149431, -1.9177)
+steering = 3.14159
+use_as_traction = true
+use_as_steering = true
+wheel_friction_slip = 0.0
+
+[node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -0.0149431, -1.9177)
+steering = 3.14159
+use_as_traction = true
+use_as_steering = true
+wheel_friction_slip = 0.0

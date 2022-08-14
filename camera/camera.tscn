@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgylenmb226xt"]
+
+[ext_resource type="Script" path="res://camera/camera.gd" id="1_l5g6u"]
+
+[node name="CameraPivot" type="Node3D"]
+script = ExtResource("1_l5g6u")
+camera_rot = 0.0
+
+[node name="CameraBoom" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616445, 0)
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraBoom"]
