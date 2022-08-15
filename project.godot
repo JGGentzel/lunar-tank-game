@@ -9,21 +9,35 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Camera3D",
+"class": &"InterpolatedCamera3D",
+"language": &"GDScript",
+"path": "res://addons/interpolated_camera_3d/interpolated_camera_3d.gd"
+}, {
 "base": "Node3D",
 "class": &"TerrainChunk",
 "language": &"GDScript",
 "path": "res://terrain/TerrainChunk.gd"
 }]
 _global_script_class_icons={
+"InterpolatedCamera3D": "res://addons/interpolated_camera_3d/interpolated_camera_3d.svg",
 "TerrainChunk": ""
 }
 
 [application]
 
 config/name="Wild Jam 48"
-run/main_scene="res://test_scene.tscn"
+run/main_scene="res://terrain/world.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://scripts/globals.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/interpolated_camera_3d/plugin.cfg")
 
 [input]
 
@@ -47,7 +61,3 @@ steer_right={
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
-
-[physics]
-
-3d/default_gravity=1.62

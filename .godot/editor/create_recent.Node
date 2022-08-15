@@ -1,10 +1,13 @@
-MeshInstance3D
+InterpolatedCamera3D (interpolated_camera_3d.gd)
 DirectionalLight3D
+SpotLight3D
+OmniLight3D
+Camera3D
+MeshInstance3D
 WorldEnvironment
 Node3D
 SpringArm3D
 RigidDynamicBody3D
 CollisionShape3D
 VehicleWheel3D
-Camera3D
 VehicleBody3D

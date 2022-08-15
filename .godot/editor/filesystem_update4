@@ -2,3 +2,8 @@ res://terrain/world.tscn
 res://tank/tank.tscn
 res://test_scene.tscn
 res://terrain/terrain_chunk.tscn
+res://tank/tank.gd
+res://terrain/world.gd
+res://terrain/material/moon_rock.tres
+res://camera/camera.tscn
+res://scripts/globals.gd

@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpdsw5j5xn07u"]
+[gd_scene load_steps=8 format=3 uid="uid://dpdsw5j5xn07u"]
 
 [ext_resource type="PackedScene" uid="uid://d04yyfo8uc5h" path="res://tank/tank.tscn" id="1_k5ro4"]
 [ext_resource type="PackedScene" uid="uid://dgylenmb226xt" path="res://camera/camera.tscn" id="2_yj2kf"]
 [ext_resource type="PackedScene" uid="uid://ga58anagkeq" path="res://terrain/world.tscn" id="3_24glr"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vewgu"]
+
+[sub_resource type="Sky" id="Sky_3fco1"]
+sky_material = SubResource("ProceduralSkyMaterial_vewgu")
+
 [sub_resource type="Environment" id="Environment_752q8"]
+background_mode = 2
+background_color = Color(0.964706, 0.964706, 0.964706, 1)
+sky = SubResource("Sky_3fco1")
 
 [sub_resource type="CameraEffects" id="CameraEffects_wx4e0"]
 
@@ -23,9 +31,12 @@ seed = 852
 frequency = 0.001
 terrain_height = 1.0
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.504528, -0.157341, 0.848938, 0, 0.983255, 0.182236, -0.863396, -0.0919429, 0.496079, 6.617, 22.817, 5.264)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_752q8")
 camera_effects = SubResource("CameraEffects_wx4e0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0.833818, 0.142878, -0.533229, 0.552039, -0.215808, 0.805407, 0, -0.965926, -0.258819, -9.42516, 0, 0)

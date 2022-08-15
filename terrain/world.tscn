@@ -1,7 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://ga58anagkeq"]
+[gd_scene load_steps=23 format=3 uid="uid://ga58anagkeq"]
 
 [ext_resource type="Script" path="res://terrain/world.gd" id="1_k1boe"]
+[ext_resource type="Texture2D" uid="uid://bfwifltwh2h8b" path="res://terrain/heightmaps/0-0.jpg" id="2_lwka7"]
+[ext_resource type="Texture2D" uid="uid://bwcmcasoiwq1e" path="res://terrain/heightmaps/0-1.jpg" id="3_byt7t"]
+[ext_resource type="Texture2D" uid="uid://r0scbbckmkta" path="res://terrain/heightmaps/0-2.jpg" id="4_edi0u"]
+[ext_resource type="Texture2D" uid="uid://cv8x70ugyduva" path="res://terrain/heightmaps/0-3.jpg" id="5_gtd6p"]
+[ext_resource type="Texture2D" uid="uid://dus81w6dpbq88" path="res://terrain/heightmaps/1-0.jpg" id="6_70cwp"]
+[ext_resource type="Texture2D" uid="uid://ba4qk1q5yoefg" path="res://terrain/heightmaps/1-1.jpg" id="7_drm40"]
+[ext_resource type="Texture2D" uid="uid://ch4py0va3bonr" path="res://terrain/heightmaps/1-2.jpg" id="8_8vfe3"]
+[ext_resource type="Texture2D" uid="uid://br12uc2qocax0" path="res://terrain/heightmaps/1-3.jpg" id="9_bnfuw"]
+[ext_resource type="Texture2D" uid="uid://ippf8rflpbpf" path="res://terrain/heightmaps/2-0.jpg" id="10_8fe7a"]
+[ext_resource type="Texture2D" uid="uid://bktlymk83mvuu" path="res://terrain/heightmaps/2-1.jpg" id="11_ft2li"]
+[ext_resource type="Texture2D" uid="uid://dcnbpdtftm004" path="res://terrain/heightmaps/2-2.jpg" id="12_815hp"]
+[ext_resource type="Texture2D" uid="uid://bvivfvg1je1wc" path="res://terrain/heightmaps/2-3.jpg" id="13_71y53"]
+[ext_resource type="Texture2D" uid="uid://r8sgd0r4kxrv" path="res://terrain/heightmaps/3-0.jpg" id="14_16oxu"]
+[ext_resource type="Texture2D" uid="uid://c1abg8sa17jy" path="res://terrain/heightmaps/3-1.jpg" id="15_qdu73"]
+[ext_resource type="Texture2D" uid="uid://m7e5cpo3p6xj" path="res://terrain/heightmaps/3-2.jpg" id="16_xtn0f"]
+[ext_resource type="Texture2D" uid="uid://cybcpi1y6ctuw" path="res://terrain/heightmaps/3-3.jpg" id="17_40psb"]
+[ext_resource type="PackedScene" uid="uid://d04yyfo8uc5h" path="res://tank/tank.tscn" id="18_4bugo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y4lkm"]
+
+[sub_resource type="Sky" id="Sky_3fco1"]
+sky_material = SubResource("ProceduralSkyMaterial_y4lkm")
+
+[sub_resource type="Environment" id="Environment_e8gfg"]
+background_mode = 2
+background_color = Color(0.964706, 0.964706, 0.964706, 1)
+sky = SubResource("Sky_3fco1")
+
+[sub_resource type="CameraEffects" id="CameraEffects_yoqky"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_k1boe")
+tank_scene = ExtResource("18_4bugo")
 frequency = 10.0
+terrain_height = 0.1
+height_maps = [ExtResource("2_lwka7"), ExtResource("3_byt7t"), ExtResource("4_edi0u"), ExtResource("5_gtd6p"), ExtResource("6_70cwp"), ExtResource("7_drm40"), ExtResource("8_8vfe3"), ExtResource("9_bnfuw"), ExtResource("10_8fe7a"), ExtResource("11_ft2li"), ExtResource("12_815hp"), ExtResource("13_71y53"), ExtResource("14_16oxu"), ExtResource("15_qdu73"), ExtResource("16_xtn0f"), ExtResource("17_40psb")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e8gfg")
+camera_effects = SubResource("CameraEffects_yoqky")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.833818, 0.142878, -0.533229, 0.552039, -0.215808, 0.805407, 0, -0.965926, -0.258819, -9.42516, 0, 0)
